@@ -5,9 +5,10 @@ class Solution:
         }
 
         result = 0 
-        for i in range(len(s)):
-            if i + 1 < len(s) and roman2int[s[i]] < roman2int[s[i + 1]]:
-                result -=1 = roman2int[s[i]]
+        for i in range(len(s)-1):
+            if roman2int[s[i]] < roman2int[s[i + 1]]:
+                result -= roman2int[s[i]]
             else:   
                 result += roman2int[s[i]]
+        result += roman2int[s[-1]]
         return result
