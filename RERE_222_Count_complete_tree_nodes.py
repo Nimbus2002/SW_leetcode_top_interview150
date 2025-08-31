@@ -11,7 +11,7 @@ class Solution:
         r = self.get_depth(root.left, True) + 1
         l = self.get_depth(root.right, False) +1
         if r == l:
-            return (1<<r) -1
+            return (1<<r) -1 # 2^r -1
         return 1 + self.countNodes(root.left) + self.countNodes(root.right)
 
     def get_depth(self, node, left):
